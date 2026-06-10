@@ -1,0 +1,702 @@
+﻿<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>চৌধুরী মেডিক্যাল স্টোর্স</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0D1B6E;
+    --blue: #1565C0;
+    --teal: #00796B;
+    --teal-light: #E0F2F1;
+    --sky: #E3F2FD;
+    --gold: #F9A825;
+    --white: #ffffff;
+    --gray: #546E7A;
+    --light: #F4F8FF;
+    --card-shadow: 0 4px 20px rgba(13,27,110,0.10);
+  }
+
+  body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background: var(--light);
+    color: #1a1a2e;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #1565C0 55%, #00897B 100%);
+    padding: 0 0 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 340px; height: 340px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    top: -120px; right: -80px;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 200px; height: 200px;
+    background: rgba(249,168,37,0.12);
+    border-radius: 50%;
+    bottom: -60px; left: -40px;
+  }
+
+  .top-bar {
+    background: rgba(0,0,0,0.25);
+    padding: 8px 20px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    letter-spacing: 0.3px;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    padding: 28px 20px 0;
+    text-align: center;
+  }
+
+  .cross-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px; height: 56px;
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 50%;
+    margin-bottom: 14px;
+    font-size: 26px;
+    color: white;
+    backdrop-filter: blur(8px);
+  }
+
+  .hero h1 {
+    font-size: clamp(1.7rem, 7vw, 2.6rem);
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    margin-bottom: 6px;
+  }
+
+  .hero-address {
+    color: rgba(255,255,255,0.82);
+    font-size: 13px;
+    line-height: 1.7;
+    max-width: 340px;
+    margin: 0 auto 16px;
+  }
+
+  .phone-chips {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .phone-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(6px);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .phone-chip:hover { background: rgba(255,255,255,0.25); }
+  .phone-chip .icon { font-size: 14px; }
+
+  .services-strip {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 12px;
+  }
+  .service-tag {
+    background: var(--gold);
+    color: #333;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+  }
+
+  /* ── SEARCH ── */
+  .search-wrap {
+    padding: 20px 16px 0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border-radius: 50px;
+    padding: 10px 18px;
+    box-shadow: 0 4px 20px rgba(13,27,110,0.14);
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .search-box:focus-within { border-color: var(--blue); }
+  .search-box span { font-size: 18px; color: var(--gray); }
+  .search-box input {
+    border: none; outline: none;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 15px;
+    color: #1a1a2e;
+    flex: 1;
+    background: transparent;
+  }
+
+  /* ── SECTION TITLE ── */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 28px 16px 16px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .section-head h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .section-head .line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, var(--blue), transparent);
+    border-radius: 2px;
+  }
+  .section-head .count-badge {
+    background: var(--navy);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* ── DOCTOR GRID ── */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 0 14px 14px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  @media (min-width: 560px) {
+    .grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 820px) {
+    .grid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+
+  .card {
+    background: white;
+    border-radius: 18px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(21,101,192,0.07);
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 32px rgba(13,27,110,0.16);
+  }
+
+  .card-top {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    padding: 16px 16px 14px;
+    position: relative;
+  }
+  .card-top.teal {
+    background: linear-gradient(135deg, #00695C 0%, #00897B 100%);
+  }
+  .card-top.purple {
+    background: linear-gradient(135deg, #4527A0 0%, #7B1FA2 100%);
+  }
+  .card-top.maroon {
+    background: linear-gradient(135deg, #880E4F 0%, #C2185B 100%);
+  }
+  .card-top.dark-teal {
+    background: linear-gradient(135deg, #004D40 0%, #00796B 100%);
+  }
+  .card-top.indigo {
+    background: linear-gradient(135deg, #1A237E 0%, #3949AB 100%);
+  }
+
+  .doc-name {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+  .doc-degree {
+    font-size: 10.5px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+  }
+
+  .card-body {
+    padding: 14px 16px;
+  }
+
+  .specialty-label {
+    display: inline-block;
+    background: var(--sky);
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  .specialty-label.teal { background: var(--teal-light); color: var(--teal); }
+
+  .hospital-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--gray);
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .hospital-row .icon { flex-shrink: 0; margin-top: 1px; font-size: 13px; }
+
+  .schedule-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #FFF8E1;
+    border: 1px solid #FFE082;
+    border-radius: 10px;
+    padding: 7px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #5D4037;
+    line-height: 1.4;
+  }
+  .schedule-pill .icon { font-size: 14px; flex-shrink: 0; }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    padding: 24px 20px;
+    font-size: 12.5px;
+    line-height: 1.9;
+    margin-top: 20px;
+  }
+  .footer strong { color: white; }
+  .footer .footer-services {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+  .footer-tag {
+    background: rgba(255,255,255,0.12);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  /* ── NO RESULTS ── */
+  .no-results {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--gray);
+    font-size: 15px;
+    display: none;
+    grid-column: 1 / -1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO HEADER -->
+<section class="hero">
+  <div class="top-bar">কুশমণ্ডি (মহিপাল রোড), পশ্চিমবঙ্গ • গ্রামীণ বিকাশ ব্যাংকের নিচের তলায়</div>
+  <div class="hero-inner">
+    <div class="cross-icon">✚</div>
+    <h1>চৌধুরী মেডিক্যাল স্টোর্স</h1>
+    <p class="hero-address">কুশমণ্ডি (মহিপাল রোড), পশ্চিমবঙ্গ<br>গ্রামীণ বিকাশ ব্যাংকের নিচের তলায়</p>
+    <div class="phone-chips">
+      <a href="tel:9475758186" class="phone-chip"><span class="icon">📞</span>94757 58186</a>
+      <a href="tel:9733412336" class="phone-chip"><span class="icon">📞</span>97334 12336</a>
+    </div>
+    <div class="services-strip">
+      <span class="service-tag">USG</span>
+      <span class="service-tag">X-RAY (Digital)</span>
+      <span class="service-tag">ECG</span>
+      <span class="service-tag">রক্ত পরীক্ষা</span>
+      <span class="service-tag">মল • মূত্র • কফ পরীক্ষা</span>
+    </div>
+  </div>
+
+  <!-- Search Box inside hero bottom -->
+  <div class="search-wrap">
+    <div class="search-box">
+      <span>🔍</span>
+      <input type="text" id="searchInput" placeholder="ডাক্তার বা বিশেষজ্ঞতা খুঁজুন..." oninput="filterDoctors()" />
+    </div>
+  </div>
+</section>
+
+<!-- DOCTOR SECTION -->
+<div class="section-head">
+  <h2>👨‍⚕️ বিশেষজ্ঞ চিকিৎসক তালিকা</h2>
+  <div class="line"></div>
+  <span class="count-badge" id="docCount">২৩ জন</span>
+</div>
+
+<div class="grid" id="doctorGrid">
+
+  <div class="card" data-search="তথাগত দত্ত নিউরো সার্জন প্রাণু রোগ">
+    <div class="card-top purple">
+      <div class="doc-name">ডাঃ তথাগত দত্ত</div>
+      <div class="doc-degree">এম.বি.বি.এস., এম.এম., এম.এস.এন.(বি.এন.ই.) এম.এস.(নিউরো সার্জারি)</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label">নিউরো সার্জন (প্রাণু রোগ বিশেষজ্ঞ)</span>
+      <div class="hospital-row"><span class="icon">🏥</span>মালদা মেডিক্যাল কলেজ ও পি.জি. হাসপাতাল (কলকাতা)</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>মাসের দ্বিতীয় সোমবার — বিকাল ৩টা হইতে</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="অসীম কুমার দে কার্ডিও সার্জন হৃদ রোগ">
+    <div class="card-top maroon">
+      <div class="doc-name">ডাঃ অসীম কুমার দে</div>
+      <div class="doc-degree">এম.বি.বি.এস., এম.এস.(কার্ডিও), এম.আর.এইচ.(কার্ডিও)</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label">কার্ডিও সার্জন (হৃদ ও বুকের রোগ বিশেষজ্ঞ)</span>
+      <div class="hospital-row"><span class="icon">🏥</span>পূর্ব বর্ধমান, বাঁকুড়া, পুরুলিয়া ও অন্যান্য হাসপাতাল</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>মাসের তৃতীয় শনিবার — বিকাল ৪টা হইতে</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="সাত্তার হোসেন চেস্ট মেডিসিন">
+    <div class="card-top teal">
+      <div class="doc-name">ডাঃ সাত্তার হোসেন</div>
+      <div class="doc-degree">এম.বি.বি.এস., এম.ডি. (চেস্ট মেডিসিন)</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label teal">চেস্ট রোগ বিশেষজ্ঞ</span>
+      <div class="hospital-row"><span class="icon">🏥</span>মালদা মেডিক্যাল কলেজ এন্ড হাসপাতাল</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি মঙ্গলবার — দুপুর ২টা হইতে</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="কৃষ্ণাল পণ্ডিত ইউরোলজিস্ট">
+    <div class="card-top indigo">
+      <div class="doc-name">ডাঃ কৃষ্ণাল পণ্ডিত</div>
+      <div class="doc-degree">এম.বি.বি.এস., MNAMS ডি.এন.বি., এফ.এন.বি.</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label">ইউরোলজিস্ট</span>
+      <div class="hospital-row"><span class="icon">🏥</span>এন. আর. এস. হাসপাতাল (কলকাতা)</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি মাসে একবার — বুধবার সকাল ১০টা হইতে</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="শুভদীপ দে গ্যাস্ট্রোএন্টারোলজিস্ট লিভার পেটের রোগ">
+    <div class="card-top">
+      <div class="doc-name">ডাঃ শুভদীপ দে</div>
+      <div class="doc-degree">এম.বি.বি.এস.(কলি.) এম.ডি., ডি.এন.বি.(গ্যাস্ট্রো), এস.এম.ডি.(ফেলো)</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label">গ্যাস্ট্রোএন্টারোলজিস্ট (লিভার ও পেটের রোগ বিশেষজ্ঞ)</span>
+      <div class="hospital-row"><span class="icon">🏥</span>অ্যাপোলো হাসপাতাল</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>১৫ দিন পর পর বৃহস্পতিবার — বিকাল ২টা হইতে</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="সন্দীপ লাহিড়ী বর্ণপদক প্রাপ্ত প্রজনন স্ত্রীরোগ">
+    <div class="card-top purple">
+      <div class="doc-name">ডাঃ সন্দীপ লাহিড়ী</div>
+      <div class="doc-degree">এম.বি.বি.এস, এম.ডি, এন.আই, ডি.টি.সি, ডি.আই.ও (কাল), এম.এস (জি.ও.)</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label">বর্ণপদক প্রাপ্ত — প্রজনন, স্ত্রীরোগ ও স্তন্যপায়িতা রোগ বিশেষজ্ঞ</span>
+      <div class="hospital-row"><span class="icon">🏥</span></div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি রবিবার ও বুধবার — সকাল ৮টা হইতে</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="মেরিনা বেগম স্ত্রীরোগ গর্ভকালীন">
+    <div class="card-top maroon">
+      <div class="doc-name">ডাঃ মেরিনা বেগম</div>
+      <div class="doc-degree">এম.বি.বি.এস., ডি.জি.ও (গায়না)</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label">স্ত্রীরোগ ও গর্ভকালীন সেবা</span>
+      <div class="hospital-row"><span class="icon">🏥</span>গঙ্গারামপুর মহকুমা হাসপাতাল</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি শনিবার — বিকাল ৩টা হইতে</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="সৃজন মণ্ডল স্ত্রীরোগ বন্ধ্যাত্ব">
+    <div class="card-top teal">
+      <div class="doc-name">ডাঃ সৃজন মণ্ডল</div>
+      <div class="doc-degree">এম.বি.বি.এস.(কলি.) এম.ডি. (ডি.জি.ও.)</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label teal">স্ত্রীরোগ ও বন্ধ্যাত্ব রোগ বিশেষজ্ঞ সার্জন</span>
+      <div class="hospital-row"><span class="icon">🏥</span>গঙ্গারামপুর মহকুমা হাসপাতাল</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি সোমবার — বিকাল ৫টা হইতে</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="মোসাদ্দেক হোসেন মেডিসিন ডায়াবেটিস হৃদ">
+    <div class="card-top">
+      <div class="doc-name">ডাঃ মোসাদ্দেক হোসেন</div>
+      <div class="doc-degree">এম.বি.বি.এস., এম.ডি. (মেডিসিন)</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label">হৃদ, সুগার, থাইরয়েড, কিডনি, পেস্টার ও বুকের রোগ বিশেষজ্ঞ</span>
+      <div class="hospital-row"><span class="icon">🏥</span>পি. কে. হাসপাতাল, কলকাতা (প্রাক্তন)</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>মঙ্গলবার ও শনিবার — সকাল ৮টা ও বৃহস্পতিবার — বিকাল ২টা</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="জয়ন্ত রায় অর্থোপেডিক্স রিউম্যাটোলজি">
+    <div class="card-top indigo">
+      <div class="doc-name">প্রফেসার ডাঃ জয়ন্ত রায়</div>
+      <div class="doc-degree">এম.বি.বি.এস., এম.ডি.(এআইআইএমএস), ডি.এন.বি.</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label">অর্থোপেডিক্স, রিউম্যাটোলজি-৩</span>
+      <div class="hospital-row"><span class="icon">🏥</span>মালদা জেলা হাসপাতাল</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>মাসে দ্বিতীয় ও চতুর্থ শনিবার — দুপুর ২টা হইতে</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="পিংকি বর্ধন চর্ম অ্যালার্জি চুলপড়া">
+    <div class="card-top purple">
+      <div class="doc-name">ডাঃ পিংকি বর্ধন</div>
+      <div class="doc-degree">এম.বি.বি.এস., এম.ডি. (ডার্মাটোলজি)</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label">চর্ম, অ্যালার্জি, চুলপড়া ও ত্বক রোগ বিশেষজ্ঞ</span>
+      <div class="hospital-row"><span class="icon">🏥</span>রায়গঞ্জ মেডিক্যাল কলেজ ও হাসপাতাল</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি রবিবার সকাল ১১টা ও বৃহস্পতিবার — বিকাল ৩টা হইতে</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="কৃষ্ণ মোহন সিং মানসিক রোগ সাইকিয়াট্রি">
+    <div class="card-top teal">
+      <div class="doc-name">ডাঃ কৃষ্ণ মোহন সিং</div>
+      <div class="doc-degree">এম.বি.বি.এস., ডি.জি., ডি.পি.এম., এম.ডি.(Psychiatry)</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label teal">মানসিক রোগ বিশেষজ্ঞ (বাত ও আধা রোগ)</span>
+      <div class="hospital-row"><span class="icon">🏥</span>সেন্ট্রাল ইনস্টিটিউট অফ রায় রিহ্যাবিলিটেশন</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি মাসে প্রথম ও তৃতীয় রবিবার — সকাল ৮টা হইতে</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="কনিকা দাস মানসিক রোগ সাইকিয়াট্রি">
+    <div class="card-top maroon">
+      <div class="doc-name">ডাঃ কনিকা দাস</div>
+      <div class="doc-degree">এম.বি.বি.এস., এম.ডি.(Psychiatry)</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label">মানসিক রোগ বিশেষজ্ঞ (বাত ও আধা রোগ)</span>
+      <div class="hospital-row"><span class="icon">🏥</span>রায়গঞ্জ মেডিক্যাল কলেজ এন্ড হাসপাতাল</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি মাসে দ্বিতীয় ও চতুর্থ বৃহস্পতিবার — দুপুর ২টা হইতে</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="মোঃ সাদিম আক্তার শিশু নবজাতক পেডিয়াট্রিক্স">
+    <div class="card-top">
+      <div class="doc-name">ডাঃ মোঃ সাদিম আক্তার</div>
+      <div class="doc-degree">এম.বি.বি.এস.(কলি.) এম.ডি. (পেডিয়াট্রিক্স)</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label">নবজাতক ও শিশু রোগ বিশেষজ্ঞ</span>
+      <div class="hospital-row"><span class="icon">🏥</span>কালিয়াগঞ্জ স্টেট জেনারেল হাসপাতাল</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতিদিন — সকাল ৮-১০টা ও বিকাল ৪-৫টা পর্যন্ত</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="অনুতোষ মাইতি নাক কান গলা ENT">
+    <div class="card-top indigo">
+      <div class="doc-name">ডাঃ অনুতোষ মাইতি</div>
+      <div class="doc-degree">এম.বি.বি.এস.(কলি.) এম.এস. (ই.এন.টি.)</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label">নাক, কান, গলা রোগ বিশেষজ্ঞ সার্জন</span>
+      <div class="hospital-row"><span class="icon">🏥</span>রায়গঞ্জ মেডিক্যাল কলেজ ও হাসপাতাল</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি মঙ্গলবার — বিকাল ৩টা হইতে</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="ফিরোজ কবীর অর্থোপেডিক হাড় পেশী">
+    <div class="card-top teal">
+      <div class="doc-name">ডাঃ ফিরোজ কবীর</div>
+      <div class="doc-degree">এম.বি.বি.এস., এম. এস. (অর্থো.)</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label teal">অর্থোপেডিক সার্জন — হাড়, পেশী ও বাত রোগ বিশেষজ্ঞ</span>
+      <div class="hospital-row"><span class="icon">🏥</span>মালদা সোনাক্ষান</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি বৃহস্পতিবার — দুপুর ২টা হইতে</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="দেবাশিষ বিশ্বাস জেনারেল সার্জন ল্যাপারোস্কপি">
+    <div class="card-top">
+      <div class="doc-name">ডাঃ দেবাশিষ বিশ্বাস</div>
+      <div class="doc-degree">এম.বি.বি.এস., এম. এস.</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label">জেনারেল সার্জন ও ল্যাপারোস্কপি সার্জন</span>
+      <div class="hospital-row"><span class="icon">🏥</span>মালদা সোনাক্ষান</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি শুক্রবার — বিকাল ৩টা হইতে</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="রিজওয়ান আলম জেনারেল সার্জন পাটনা">
+    <div class="card-top maroon">
+      <div class="doc-name">ডাঃ মহাঃ রিজওয়ান আলম</div>
+      <div class="doc-degree">এম.বি.বি.এস., এম.এস.এম.ডি.নি. (পাটনা)</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label">জেনারেল সার্জন ও ল্যাপারোস্কপি সার্জন</span>
+      <div class="hospital-row"><span class="icon">🏥</span>পুরিয়া ইমাম নার্সিং হোম</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>মাসে প্রথম ও তৃতীয় রবিবার — সকাল ১১টা থেকে ১২টা পর্যন্ত</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="ওয়াজিফা ইউসুফ জেনারেল ফিজিশিয়ান">
+    <div class="card-top indigo">
+      <div class="doc-name">ডাঃ ওয়াজিফা ইউসুফ</div>
+      <div class="doc-degree">এম.বি.বি.এস. (ডাঃ.বি.ইউ.এইচ.এস, আগ.)</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label">জেনারেল ফিজিশিয়ান</span>
+      <div class="hospital-row"><span class="icon">🏥</span>সকল রোগের চিকিৎসা</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতিদিন সকাল ৮টা হইতে সন্ধ্যা ৯টা পর্যন্ত</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="এন আর বিশ্বাস চক্ষু নেপাল">
+    <div class="card-top teal">
+      <div class="doc-name">ডাঃ এন.আর.বিশ্বাস</div>
+      <div class="doc-degree">B.optom</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label teal">চক্ষু রোগ বিশেষজ্ঞ — নেপাল</span>
+      <div class="hospital-row"><span class="icon">🏥</span></div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি শনিবার — সকাল ৯টা ও বৃহস্পতিবার বিকাল ৪টা হইতে</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="আব্দুল্লাহ আল মতি ওরাল ডেন্টাল দাঁত">
+    <div class="card-top">
+      <div class="doc-name">ডাঃ আব্দুল্লাহ আল মতি</div>
+      <div class="doc-degree">B.D.S.</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label">ওরাল এন্ড ডেন্টাল সার্জন</span>
+      <div class="hospital-row"><span class="icon">🏥</span></div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতিদিন সকাল ৯টা হইতে বিকাল ৬টা পর্যন্ত</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="নাজরিন নেহার ফিজিওথেরাপি">
+    <div class="card-top purple">
+      <div class="doc-name">ডাঃ নাজরিন নেহার</div>
+      <div class="doc-degree">P.T.H.S (WBUHS)</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label">ফিজিওথেরাপিস্ট (বাত, আঘাত, মাংসপেশির রোগ বিশেষজ্ঞ)</span>
+      <div class="hospital-row"><span class="icon">🏥</span></div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতিদিন সকাল ৮টা হইতে বিকাল ৫টা পর্যন্ত</div>
+    </div>
+  </div>
+
+  <div class="card" data-search="অলক্ষ্য ভট্টাচার্য নিউরো রোগ মস্তিষ্ক">
+    <div class="card-top maroon">
+      <div class="doc-name">ডাঃ অলক্ষ্য ভট্টাচার্য</div>
+      <div class="doc-degree">এম.বি.এস., ডি.টি.এম.(নিউরো) ডাঃ এন.বি. (নিউরো)</div>
+    </div>
+    <div class="card-body">
+      <span class="specialty-label">নিউরো সোশ্যিস্ট (মস্তিষ্ক রোগ বিশেষজ্ঞ)</span>
+      <div class="hospital-row"><span class="icon">🏥</span>মালদা সোনাক্ষান</div>
+      <div class="schedule-pill"><span class="icon">🗓️</span>মাসের প্রথম শনিবার — বিকাল ৪টা হইতে</div>
+    </div>
+  </div>
+
+  <div class="no-results" id="noResults">কোনো ডাক্তার পাওয়া যায়নি 😔</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <strong>চৌধুরী মেডিক্যাল স্টোর্স</strong><br>
+  কুশমণ্ডি (মহিপাল রোড), পশ্চিমবঙ্গ — গ্রামীণ বিকাশ ব্যাংকের নিচের তলায়<br>
+  📞 94757 58186 &nbsp;|&nbsp; 97334 12336
+  <div class="footer-services">
+    <span class="footer-tag">USG</span>
+    <span class="footer-tag">X-RAY Digital</span>
+    <span class="footer-tag">ECG</span>
+    <span class="footer-tag">Blood Test</span>
+    <span class="footer-tag">Stool • Urine • Sputum</span>
+  </div>
+  <div style="margin-top:14px;font-size:11px;opacity:0.6;">বিঃ দ্রঃ — একই ছাদের নিচে সমস্ত রকমের পরীক্ষা করা হয়।</div>
+</footer>
+
+<script>
+  function filterDoctors() {
+    const q = document.getElementById('searchInput').value.toLowerCase().trim();
+    const cards = document.querySelectorAll('.card[data-search]');
+    let visible = 0;
+    cards.forEach(card => {
+      const text = (card.dataset.search + ' ' + card.innerText).toLowerCase();
+      const show = !q || text.includes(q);
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+    document.getElementById('docCount').textContent = visible + ' জন';
+  }
+</script>
+</body>
+</html>
