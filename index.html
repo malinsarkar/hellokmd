@@ -1,702 +1,820 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>চৌধুরী মেডিক্যাল স্টোর্স</title>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Hello Kushmandi — Advertising Pricing</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&family=Baloo+Da+2:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --navy: #0D1B6E;
-    --blue: #1565C0;
-    --teal: #00796B;
-    --teal-light: #E0F2F1;
-    --sky: #E3F2FD;
-    --gold: #F9A825;
+    --green: #1a7c4f;
+    --green-light: #e8f5ee;
+    --green-mid: #2fa86a;
+    --gold: #e8a020;
+    --gold-light: #fff8ec;
+    --red: #c0392b;
+    --dark: #1a2a22;
+    --text: #2d3a32;
+    --muted: #6b7c72;
     --white: #ffffff;
-    --gray: #546E7A;
-    --light: #F4F8FF;
-    --card-shadow: 0 4px 20px rgba(13,27,110,0.10);
+    --border: #c8ddd2;
+    --bg: #f4faf7;
   }
 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
   body {
-    font-family: 'Hind Siliguri', sans-serif;
-    background: var(--light);
-    color: #1a1a2e;
+    background: var(--bg);
+    font-family: 'Baloo Da 2', sans-serif;
+    color: var(--text);
     min-height: 100vh;
   }
 
-  /* ── HEADER ── */
-  .hero {
-    background: linear-gradient(135deg, var(--navy) 0%, #1565C0 55%, #00897B 100%);
-    padding: 0 0 32px;
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #0d5c38 0%, #1a7c4f 50%, #2fa86a 100%);
+    padding: 36px 24px 28px;
+    text-align: center;
     position: relative;
     overflow: hidden;
   }
-  .hero::before {
+  .header::before {
     content: '';
     position: absolute;
-    width: 340px; height: 340px;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -50px; left: -30px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
     background: rgba(255,255,255,0.05);
-    border-radius: 50%;
-    top: -120px; right: -80px;
   }
-  .hero::after {
-    content: '';
-    position: absolute;
-    width: 200px; height: 200px;
-    background: rgba(249,168,37,0.12);
-    border-radius: 50%;
-    bottom: -60px; left: -40px;
-  }
-
-  .top-bar {
-    background: rgba(0,0,0,0.25);
-    padding: 8px 20px;
-    text-align: center;
-    font-size: 12px;
-    color: rgba(255,255,255,0.8);
-    letter-spacing: 0.3px;
-  }
-
-  .hero-inner {
-    position: relative;
-    z-index: 2;
-    padding: 28px 20px 0;
-    text-align: center;
-  }
-
-  .cross-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 56px; height: 56px;
-    background: rgba(255,255,255,0.15);
-    border: 2px solid rgba(255,255,255,0.4);
-    border-radius: 50%;
-    margin-bottom: 14px;
-    font-size: 26px;
-    color: white;
-    backdrop-filter: blur(8px);
-  }
-
-  .hero h1 {
-    font-size: clamp(1.7rem, 7vw, 2.6rem);
-    font-weight: 700;
-    color: white;
-    line-height: 1.2;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
-    margin-bottom: 6px;
-  }
-
-  .hero-address {
-    color: rgba(255,255,255,0.82);
-    font-size: 13px;
-    line-height: 1.7;
-    max-width: 340px;
-    margin: 0 auto 16px;
-  }
-
-  .phone-chips {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-  }
-  .phone-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+  .header-badge {
+    display: inline-block;
     background: rgba(255,255,255,0.15);
     border: 1px solid rgba(255,255,255,0.3);
-    backdrop-filter: blur(6px);
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-  .phone-chip:hover { background: rgba(255,255,255,0.25); }
-  .phone-chip .icon { font-size: 14px; }
-
-  .services-strip {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 0 12px;
-  }
-  .service-tag {
-    background: var(--gold);
-    color: #333;
+    color: #fff;
     font-size: 11px;
-    font-weight: 600;
-    padding: 4px 12px;
-    border-radius: 20px;
-    letter-spacing: 0.3px;
-  }
-
-  /* ── SEARCH ── */
-  .search-wrap {
-    padding: 20px 16px 0;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .search-box {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: white;
-    border-radius: 50px;
-    padding: 10px 18px;
-    box-shadow: 0 4px 20px rgba(13,27,110,0.14);
-    border: 2px solid transparent;
-    transition: border-color 0.2s;
-  }
-  .search-box:focus-within { border-color: var(--blue); }
-  .search-box span { font-size: 18px; color: var(--gray); }
-  .search-box input {
-    border: none; outline: none;
-    font-family: 'Hind Siliguri', sans-serif;
-    font-size: 15px;
-    color: #1a1a2e;
-    flex: 1;
-    background: transparent;
-  }
-
-  /* ── SECTION TITLE ── */
-  .section-head {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 28px 16px 16px;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  .section-head h2 {
-    font-size: 1.15rem;
     font-weight: 700;
-    color: var(--navy);
-  }
-  .section-head .line {
-    flex: 1;
-    height: 2px;
-    background: linear-gradient(to right, var(--blue), transparent);
-    border-radius: 2px;
-  }
-  .section-head .count-badge {
-    background: var(--navy);
-    color: white;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
     border-radius: 20px;
-    font-family: 'Poppins', sans-serif;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-family: 'Baloo Da 2', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  .header h1 span { color: #7de8b0; }
+  .header p {
+    font-family: 'Tiro Bangla', serif;
+    color: rgba(255,255,255,0.82);
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  .header-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .stat-chip {
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 12px;
+    padding: 8px 16px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .stat-chip span { font-size: 18px; font-weight: 800; display: block; }
+
+  /* INTRO NOTE */
+  .intro {
+    background: var(--gold-light);
+    border-left: 4px solid var(--gold);
+    margin: 20px 16px;
+    padding: 14px 16px;
+    border-radius: 0 10px 10px 0;
+    font-family: 'Tiro Bangla', serif;
+    font-size: 14px;
+    color: #5a3e00;
+    line-height: 1.7;
+  }
+  .intro strong { color: #b87c00; }
+
+  /* SECTION TITLE */
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 22px 16px 10px;
+  }
+  .section-title .icon {
+    width: 36px; height: 36px;
+    background: var(--green);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .section-title h2 {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--dark);
+  }
+  .section-title p {
+    font-family: 'Tiro Bangla', serif;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 1px;
   }
 
-  /* ── DOCTOR GRID ── */
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr;
+  /* CARDS */
+  .cards {
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
     gap: 14px;
-    padding: 0 14px 14px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  @media (min-width: 560px) {
-    .grid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (min-width: 820px) {
-    .grid { grid-template-columns: 1fr 1fr 1fr; }
   }
 
   .card {
-    background: white;
-    border-radius: 18px;
-    box-shadow: var(--card-shadow);
+    background: var(--white);
+    border-radius: 16px;
+    border: 1.5px solid var(--border);
     overflow: hidden;
+    box-shadow: 0 2px 12px rgba(26,124,79,0.06);
     transition: transform 0.2s, box-shadow 0.2s;
-    border: 1px solid rgba(21,101,192,0.07);
   }
   .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 32px rgba(13,27,110,0.16);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26,124,79,0.12);
   }
 
-  .card-top {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
-    padding: 16px 16px 14px;
-    position: relative;
-  }
-  .card-top.teal {
-    background: linear-gradient(135deg, #00695C 0%, #00897B 100%);
-  }
-  .card-top.purple {
-    background: linear-gradient(135deg, #4527A0 0%, #7B1FA2 100%);
-  }
-  .card-top.maroon {
-    background: linear-gradient(135deg, #880E4F 0%, #C2185B 100%);
-  }
-  .card-top.dark-teal {
-    background: linear-gradient(135deg, #004D40 0%, #00796B 100%);
-  }
-  .card-top.indigo {
-    background: linear-gradient(135deg, #1A237E 0%, #3949AB 100%);
-  }
-
-  .doc-name {
-    font-size: 1.08rem;
-    font-weight: 700;
-    color: white;
-    line-height: 1.3;
-    margin-bottom: 4px;
-  }
-  .doc-degree {
-    font-size: 10.5px;
-    color: rgba(255,255,255,0.75);
-    line-height: 1.5;
-  }
-
-  .card-body {
-    padding: 14px 16px;
-  }
-
-  .specialty-label {
-    display: inline-block;
-    background: var(--sky);
-    color: var(--blue);
-    font-size: 12px;
-    font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    line-height: 1.4;
-  }
-  .specialty-label.teal { background: var(--teal-light); color: var(--teal); }
-
-  .hospital-row {
+  .card-header {
+    padding: 14px 16px 12px;
     display: flex;
     align-items: flex-start;
-    gap: 6px;
+    justify-content: space-between;
+    gap: 10px;
+    border-bottom: 1px solid var(--green-light);
+  }
+  .card-header.gold { border-bottom-color: #fdeec8; }
+
+  .plan-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--dark);
+  }
+  .plan-sub {
+    font-family: 'Tiro Bangla', serif;
     font-size: 12px;
-    color: var(--gray);
-    margin-bottom: 10px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .price-tag {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .price-tag .amount {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--green);
+    line-height: 1;
+  }
+  .price-tag .amount.gold { color: var(--gold); }
+  .price-tag .per {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .price-tag .old-price {
+    font-size: 12px;
+    color: #aaa;
+    text-decoration: line-through;
+    display: block;
+    margin-bottom: 1px;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-top: 4px;
+  }
+  .badge.green { background: var(--green-light); color: var(--green); }
+  .badge.gold { background: #fff3d0; color: #b87c00; }
+  .badge.red { background: #fdecea; color: var(--red); }
+  .badge.blue { background: #e8f0fe; color: #2563eb; }
+
+  .card-body { padding: 12px 16px 14px; }
+  .features { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .features li {
+    font-family: 'Tiro Bangla', serif;
+    font-size: 13.5px;
+    color: var(--text);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
     line-height: 1.5;
   }
-  .hospital-row .icon { flex-shrink: 0; margin-top: 1px; font-size: 13px; }
+  .features li::before {
+    content: '✓';
+    color: var(--green-mid);
+    font-weight: 800;
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .features li.cross::before { content: '✗'; color: #ccc; }
 
-  .schedule-pill {
+  /* BANNER AD VISUAL */
+  .banner-preview {
+    background: linear-gradient(90deg, #e8f5ee, #d0ede0);
+    border: 1.5px dashed #7ec8a0;
+    border-radius: 8px;
+    margin: 8px 0 0;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  /* INTERSTITIAL PREVIEW */
+  .interstitial-preview {
+    background: linear-gradient(135deg, #1a2a22, #2d3a32);
+    border-radius: 10px;
+    margin: 8px 0 0;
+    padding: 16px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .interstitial-preview::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 8px);
+  }
+  .int-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .int-ad-box {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px;
+    padding: 12px;
+    color: rgba(255,255,255,0.85);
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .int-close {
+    position: absolute;
+    top: 8px; right: 10px;
+    color: rgba(255,255,255,0.4);
+    font-size: 11px;
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 8px 16px;
+  }
+
+  /* COMBO */
+  .combo-card {
+    background: linear-gradient(135deg, #0d5c38, #1a7c4f);
+    border-radius: 16px;
+    margin: 0 16px;
+    padding: 20px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .combo-card::before {
+    content: '';
+    position: absolute;
+    top: -20px; right: -20px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+  }
+  .combo-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .combo-card h3 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  .combo-card p {
+    font-family: 'Tiro Bangla', serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+  .combo-prices {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .combo-old { font-size: 14px; color: rgba(255,255,255,0.5); text-decoration: line-through; }
+  .combo-new { font-size: 28px; font-weight: 800; color: #7de8b0; }
+  .combo-save {
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  /* PAYMENT NOTE */
+  .payment-note {
+    background: var(--white);
+    border-radius: 14px;
+    border: 1.5px solid var(--border);
+    margin: 14px 16px;
+    padding: 16px;
+  }
+  .payment-note h4 {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 6px;
-    background: #FFF8E1;
-    border: 1px solid #FFE082;
-    border-radius: 10px;
-    padding: 7px 12px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #5D4037;
-    line-height: 1.4;
   }
-  .schedule-pill .icon { font-size: 14px; flex-shrink: 0; }
-
-  /* ── FOOTER ── */
-  .footer {
-    background: var(--navy);
-    color: rgba(255,255,255,0.8);
-    text-align: center;
-    padding: 24px 20px;
-    font-size: 12.5px;
-    line-height: 1.9;
-    margin-top: 20px;
-  }
-  .footer strong { color: white; }
-  .footer .footer-services {
+  .pay-row {
     display: flex;
-    gap: 8px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 12px;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--green-light);
   }
-  .footer-tag {
-    background: rgba(255,255,255,0.12);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-  }
+  .pay-row:last-child { border-bottom: none; }
+  .pay-icon { font-size: 20px; width: 28px; text-align: center; }
+  .pay-info { font-family: 'Tiro Bangla', serif; font-size: 13px; color: var(--text); }
+  .pay-info strong { font-family: 'Baloo Da 2', sans-serif; font-size: 12px; color: var(--green); }
 
-  /* ── NO RESULTS ── */
-  .no-results {
+  /* FOOTER */
+  .footer {
+    background: var(--dark);
+    margin-top: 24px;
+    padding: 20px 16px;
     text-align: center;
-    padding: 40px 20px;
-    color: var(--gray);
-    font-size: 15px;
-    display: none;
-    grid-column: 1 / -1;
+    color: rgba(255,255,255,0.6);
+    font-family: 'Tiro Bangla', serif;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .footer strong { color: #7de8b0; font-family: 'Baloo Da 2', sans-serif; }
+  .footer .contact {
+    margin-top: 10px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .card { transition: none; }
+  @media (min-width: 480px) {
+    .header h1 { font-size: 38px; }
+    .cards { max-width: 480px; margin: 0 auto; }
+    .section-title { max-width: 480px; margin: 0 auto; }
+    .combo-card, .payment-note, .intro { max-width: 480px; margin-left: auto; margin-right: auto; }
   }
 </style>
 </head>
 <body>
 
-<!-- HERO HEADER -->
-<section class="hero">
-  <div class="top-bar">কুশমণ্ডি (মহিপাল রোড), পশ্চিমবঙ্গ • গ্রামীণ বিকাশ ব্যাংকের নিচের তলায়</div>
-  <div class="hero-inner">
-    <div class="cross-icon">✚</div>
-    <h1>চৌধুরী মেডিক্যাল স্টোর্স</h1>
-    <p class="hero-address">কুশমণ্ডি (মহিপাল রোড), পশ্চিমবঙ্গ<br>গ্রামীণ বিকাশ ব্যাংকের নিচের তলায়</p>
-    <div class="phone-chips">
-      <a href="tel:9475758186" class="phone-chip"><span class="icon">📞</span>94757 58186</a>
-      <a href="tel:9733412336" class="phone-chip"><span class="icon">📞</span>97334 12336</a>
-    </div>
-    <div class="services-strip">
-      <span class="service-tag">USG</span>
-      <span class="service-tag">X-RAY (Digital)</span>
-      <span class="service-tag">ECG</span>
-      <span class="service-tag">রক্ত পরীক্ষা</span>
-      <span class="service-tag">মল • মূত্র • কফ পরীক্ষা</span>
-    </div>
+<!-- HEADER -->
+<div class="header">
+  <div class="header-badge">📱 Hello Kushmandi App</div>
+  <h1>বিজ্ঞাপন <span>প্রাইসিং</span><br>২০২৬</h1>
+  <p>কুশমন্ডি থানার সকল ব্যবসায়ীর জন্য বিশেষ অফার</p>
+  <div class="header-stats">
+    <div class="stat-chip"><span>১K+</span>ডাউনলোড</div>
+    <div class="stat-chip"><span>৪.৮⭐</span>রেটিং</div>
+    <div class="stat-chip"><span>৩৩</span>রিভিউ</div>
   </div>
-
-  <!-- Search Box inside hero bottom -->
-  <div class="search-wrap">
-    <div class="search-box">
-      <span>🔍</span>
-      <input type="text" id="searchInput" placeholder="ডাক্তার বা বিশেষজ্ঞতা খুঁজুন..." oninput="filterDoctors()" />
-    </div>
-  </div>
-</section>
-
-<!-- DOCTOR SECTION -->
-<div class="section-head">
-  <h2>👨‍⚕️ বিশেষজ্ঞ চিকিৎসক তালিকা</h2>
-  <div class="line"></div>
-  <span class="count-badge" id="docCount">২৩ জন</span>
 </div>
 
-<div class="grid" id="doctorGrid">
-
-  <div class="card" data-search="তথাগত দত্ত নিউরো সার্জন প্রাণু রোগ">
-    <div class="card-top purple">
-      <div class="doc-name">ডাঃ তথাগত দত্ত</div>
-      <div class="doc-degree">এম.বি.বি.এস., এম.এম., এম.এস.এন.(বি.এন.ই.) এম.এস.(নিউরো সার্জারি)</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label">নিউরো সার্জন (প্রাণু রোগ বিশেষজ্ঞ)</span>
-      <div class="hospital-row"><span class="icon">🏥</span>মালদা মেডিক্যাল কলেজ ও পি.জি. হাসপাতাল (কলকাতা)</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>মাসের দ্বিতীয় সোমবার — বিকাল ৩টা হইতে</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="অসীম কুমার দে কার্ডিও সার্জন হৃদ রোগ">
-    <div class="card-top maroon">
-      <div class="doc-name">ডাঃ অসীম কুমার দে</div>
-      <div class="doc-degree">এম.বি.বি.এস., এম.এস.(কার্ডিও), এম.আর.এইচ.(কার্ডিও)</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label">কার্ডিও সার্জন (হৃদ ও বুকের রোগ বিশেষজ্ঞ)</span>
-      <div class="hospital-row"><span class="icon">🏥</span>পূর্ব বর্ধমান, বাঁকুড়া, পুরুলিয়া ও অন্যান্য হাসপাতাল</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>মাসের তৃতীয় শনিবার — বিকাল ৪টা হইতে</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="সাত্তার হোসেন চেস্ট মেডিসিন">
-    <div class="card-top teal">
-      <div class="doc-name">ডাঃ সাত্তার হোসেন</div>
-      <div class="doc-degree">এম.বি.বি.এস., এম.ডি. (চেস্ট মেডিসিন)</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label teal">চেস্ট রোগ বিশেষজ্ঞ</span>
-      <div class="hospital-row"><span class="icon">🏥</span>মালদা মেডিক্যাল কলেজ এন্ড হাসপাতাল</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি মঙ্গলবার — দুপুর ২টা হইতে</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="কৃষ্ণাল পণ্ডিত ইউরোলজিস্ট">
-    <div class="card-top indigo">
-      <div class="doc-name">ডাঃ কৃষ্ণাল পণ্ডিত</div>
-      <div class="doc-degree">এম.বি.বি.এস., MNAMS ডি.এন.বি., এফ.এন.বি.</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label">ইউরোলজিস্ট</span>
-      <div class="hospital-row"><span class="icon">🏥</span>এন. আর. এস. হাসপাতাল (কলকাতা)</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি মাসে একবার — বুধবার সকাল ১০টা হইতে</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="শুভদীপ দে গ্যাস্ট্রোএন্টারোলজিস্ট লিভার পেটের রোগ">
-    <div class="card-top">
-      <div class="doc-name">ডাঃ শুভদীপ দে</div>
-      <div class="doc-degree">এম.বি.বি.এস.(কলি.) এম.ডি., ডি.এন.বি.(গ্যাস্ট্রো), এস.এম.ডি.(ফেলো)</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label">গ্যাস্ট্রোএন্টারোলজিস্ট (লিভার ও পেটের রোগ বিশেষজ্ঞ)</span>
-      <div class="hospital-row"><span class="icon">🏥</span>অ্যাপোলো হাসপাতাল</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>১৫ দিন পর পর বৃহস্পতিবার — বিকাল ২টা হইতে</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="সন্দীপ লাহিড়ী বর্ণপদক প্রাপ্ত প্রজনন স্ত্রীরোগ">
-    <div class="card-top purple">
-      <div class="doc-name">ডাঃ সন্দীপ লাহিড়ী</div>
-      <div class="doc-degree">এম.বি.বি.এস, এম.ডি, এন.আই, ডি.টি.সি, ডি.আই.ও (কাল), এম.এস (জি.ও.)</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label">বর্ণপদক প্রাপ্ত — প্রজনন, স্ত্রীরোগ ও স্তন্যপায়িতা রোগ বিশেষজ্ঞ</span>
-      <div class="hospital-row"><span class="icon">🏥</span></div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি রবিবার ও বুধবার — সকাল ৮টা হইতে</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="মেরিনা বেগম স্ত্রীরোগ গর্ভকালীন">
-    <div class="card-top maroon">
-      <div class="doc-name">ডাঃ মেরিনা বেগম</div>
-      <div class="doc-degree">এম.বি.বি.এস., ডি.জি.ও (গায়না)</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label">স্ত্রীরোগ ও গর্ভকালীন সেবা</span>
-      <div class="hospital-row"><span class="icon">🏥</span>গঙ্গারামপুর মহকুমা হাসপাতাল</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি শনিবার — বিকাল ৩টা হইতে</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="সৃজন মণ্ডল স্ত্রীরোগ বন্ধ্যাত্ব">
-    <div class="card-top teal">
-      <div class="doc-name">ডাঃ সৃজন মণ্ডল</div>
-      <div class="doc-degree">এম.বি.বি.এস.(কলি.) এম.ডি. (ডি.জি.ও.)</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label teal">স্ত্রীরোগ ও বন্ধ্যাত্ব রোগ বিশেষজ্ঞ সার্জন</span>
-      <div class="hospital-row"><span class="icon">🏥</span>গঙ্গারামপুর মহকুমা হাসপাতাল</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি সোমবার — বিকাল ৫টা হইতে</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="মোসাদ্দেক হোসেন মেডিসিন ডায়াবেটিস হৃদ">
-    <div class="card-top">
-      <div class="doc-name">ডাঃ মোসাদ্দেক হোসেন</div>
-      <div class="doc-degree">এম.বি.বি.এস., এম.ডি. (মেডিসিন)</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label">হৃদ, সুগার, থাইরয়েড, কিডনি, পেস্টার ও বুকের রোগ বিশেষজ্ঞ</span>
-      <div class="hospital-row"><span class="icon">🏥</span>পি. কে. হাসপাতাল, কলকাতা (প্রাক্তন)</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>মঙ্গলবার ও শনিবার — সকাল ৮টা ও বৃহস্পতিবার — বিকাল ২টা</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="জয়ন্ত রায় অর্থোপেডিক্স রিউম্যাটোলজি">
-    <div class="card-top indigo">
-      <div class="doc-name">প্রফেসার ডাঃ জয়ন্ত রায়</div>
-      <div class="doc-degree">এম.বি.বি.এস., এম.ডি.(এআইআইএমএস), ডি.এন.বি.</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label">অর্থোপেডিক্স, রিউম্যাটোলজি-৩</span>
-      <div class="hospital-row"><span class="icon">🏥</span>মালদা জেলা হাসপাতাল</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>মাসে দ্বিতীয় ও চতুর্থ শনিবার — দুপুর ২টা হইতে</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="পিংকি বর্ধন চর্ম অ্যালার্জি চুলপড়া">
-    <div class="card-top purple">
-      <div class="doc-name">ডাঃ পিংকি বর্ধন</div>
-      <div class="doc-degree">এম.বি.বি.এস., এম.ডি. (ডার্মাটোলজি)</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label">চর্ম, অ্যালার্জি, চুলপড়া ও ত্বক রোগ বিশেষজ্ঞ</span>
-      <div class="hospital-row"><span class="icon">🏥</span>রায়গঞ্জ মেডিক্যাল কলেজ ও হাসপাতাল</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি রবিবার সকাল ১১টা ও বৃহস্পতিবার — বিকাল ৩টা হইতে</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="কৃষ্ণ মোহন সিং মানসিক রোগ সাইকিয়াট্রি">
-    <div class="card-top teal">
-      <div class="doc-name">ডাঃ কৃষ্ণ মোহন সিং</div>
-      <div class="doc-degree">এম.বি.বি.এস., ডি.জি., ডি.পি.এম., এম.ডি.(Psychiatry)</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label teal">মানসিক রোগ বিশেষজ্ঞ (বাত ও আধা রোগ)</span>
-      <div class="hospital-row"><span class="icon">🏥</span>সেন্ট্রাল ইনস্টিটিউট অফ রায় রিহ্যাবিলিটেশন</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি মাসে প্রথম ও তৃতীয় রবিবার — সকাল ৮টা হইতে</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="কনিকা দাস মানসিক রোগ সাইকিয়াট্রি">
-    <div class="card-top maroon">
-      <div class="doc-name">ডাঃ কনিকা দাস</div>
-      <div class="doc-degree">এম.বি.বি.এস., এম.ডি.(Psychiatry)</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label">মানসিক রোগ বিশেষজ্ঞ (বাত ও আধা রোগ)</span>
-      <div class="hospital-row"><span class="icon">🏥</span>রায়গঞ্জ মেডিক্যাল কলেজ এন্ড হাসপাতাল</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি মাসে দ্বিতীয় ও চতুর্থ বৃহস্পতিবার — দুপুর ২টা হইতে</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="মোঃ সাদিম আক্তার শিশু নবজাতক পেডিয়াট্রিক্স">
-    <div class="card-top">
-      <div class="doc-name">ডাঃ মোঃ সাদিম আক্তার</div>
-      <div class="doc-degree">এম.বি.বি.এস.(কলি.) এম.ডি. (পেডিয়াট্রিক্স)</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label">নবজাতক ও শিশু রোগ বিশেষজ্ঞ</span>
-      <div class="hospital-row"><span class="icon">🏥</span>কালিয়াগঞ্জ স্টেট জেনারেল হাসপাতাল</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতিদিন — সকাল ৮-১০টা ও বিকাল ৪-৫টা পর্যন্ত</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="অনুতোষ মাইতি নাক কান গলা ENT">
-    <div class="card-top indigo">
-      <div class="doc-name">ডাঃ অনুতোষ মাইতি</div>
-      <div class="doc-degree">এম.বি.বি.এস.(কলি.) এম.এস. (ই.এন.টি.)</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label">নাক, কান, গলা রোগ বিশেষজ্ঞ সার্জন</span>
-      <div class="hospital-row"><span class="icon">🏥</span>রায়গঞ্জ মেডিক্যাল কলেজ ও হাসপাতাল</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি মঙ্গলবার — বিকাল ৩টা হইতে</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="ফিরোজ কবীর অর্থোপেডিক হাড় পেশী">
-    <div class="card-top teal">
-      <div class="doc-name">ডাঃ ফিরোজ কবীর</div>
-      <div class="doc-degree">এম.বি.বি.এস., এম. এস. (অর্থো.)</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label teal">অর্থোপেডিক সার্জন — হাড়, পেশী ও বাত রোগ বিশেষজ্ঞ</span>
-      <div class="hospital-row"><span class="icon">🏥</span>মালদা সোনাক্ষান</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি বৃহস্পতিবার — দুপুর ২টা হইতে</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="দেবাশিষ বিশ্বাস জেনারেল সার্জন ল্যাপারোস্কপি">
-    <div class="card-top">
-      <div class="doc-name">ডাঃ দেবাশিষ বিশ্বাস</div>
-      <div class="doc-degree">এম.বি.বি.এস., এম. এস.</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label">জেনারেল সার্জন ও ল্যাপারোস্কপি সার্জন</span>
-      <div class="hospital-row"><span class="icon">🏥</span>মালদা সোনাক্ষান</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি শুক্রবার — বিকাল ৩টা হইতে</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="রিজওয়ান আলম জেনারেল সার্জন পাটনা">
-    <div class="card-top maroon">
-      <div class="doc-name">ডাঃ মহাঃ রিজওয়ান আলম</div>
-      <div class="doc-degree">এম.বি.বি.এস., এম.এস.এম.ডি.নি. (পাটনা)</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label">জেনারেল সার্জন ও ল্যাপারোস্কপি সার্জন</span>
-      <div class="hospital-row"><span class="icon">🏥</span>পুরিয়া ইমাম নার্সিং হোম</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>মাসে প্রথম ও তৃতীয় রবিবার — সকাল ১১টা থেকে ১২টা পর্যন্ত</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="ওয়াজিফা ইউসুফ জেনারেল ফিজিশিয়ান">
-    <div class="card-top indigo">
-      <div class="doc-name">ডাঃ ওয়াজিফা ইউসুফ</div>
-      <div class="doc-degree">এম.বি.বি.এস. (ডাঃ.বি.ইউ.এইচ.এস, আগ.)</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label">জেনারেল ফিজিশিয়ান</span>
-      <div class="hospital-row"><span class="icon">🏥</span>সকল রোগের চিকিৎসা</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতিদিন সকাল ৮টা হইতে সন্ধ্যা ৯টা পর্যন্ত</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="এন আর বিশ্বাস চক্ষু নেপাল">
-    <div class="card-top teal">
-      <div class="doc-name">ডাঃ এন.আর.বিশ্বাস</div>
-      <div class="doc-degree">B.optom</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label teal">চক্ষু রোগ বিশেষজ্ঞ — নেপাল</span>
-      <div class="hospital-row"><span class="icon">🏥</span></div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতি শনিবার — সকাল ৯টা ও বৃহস্পতিবার বিকাল ৪টা হইতে</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="আব্দুল্লাহ আল মতি ওরাল ডেন্টাল দাঁত">
-    <div class="card-top">
-      <div class="doc-name">ডাঃ আব্দুল্লাহ আল মতি</div>
-      <div class="doc-degree">B.D.S.</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label">ওরাল এন্ড ডেন্টাল সার্জন</span>
-      <div class="hospital-row"><span class="icon">🏥</span></div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতিদিন সকাল ৯টা হইতে বিকাল ৬টা পর্যন্ত</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="নাজরিন নেহার ফিজিওথেরাপি">
-    <div class="card-top purple">
-      <div class="doc-name">ডাঃ নাজরিন নেহার</div>
-      <div class="doc-degree">P.T.H.S (WBUHS)</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label">ফিজিওথেরাপিস্ট (বাত, আঘাত, মাংসপেশির রোগ বিশেষজ্ঞ)</span>
-      <div class="hospital-row"><span class="icon">🏥</span></div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>প্রতিদিন সকাল ৮টা হইতে বিকাল ৫টা পর্যন্ত</div>
-    </div>
-  </div>
-
-  <div class="card" data-search="অলক্ষ্য ভট্টাচার্য নিউরো রোগ মস্তিষ্ক">
-    <div class="card-top maroon">
-      <div class="doc-name">ডাঃ অলক্ষ্য ভট্টাচার্য</div>
-      <div class="doc-degree">এম.বি.এস., ডি.টি.এম.(নিউরো) ডাঃ এন.বি. (নিউরো)</div>
-    </div>
-    <div class="card-body">
-      <span class="specialty-label">নিউরো সোশ্যিস্ট (মস্তিষ্ক রোগ বিশেষজ্ঞ)</span>
-      <div class="hospital-row"><span class="icon">🏥</span>মালদা সোনাক্ষান</div>
-      <div class="schedule-pill"><span class="icon">🗓️</span>মাসের প্রথম শনিবার — বিকাল ৪টা হইতে</div>
-    </div>
-  </div>
-
-  <div class="no-results" id="noResults">কোনো ডাক্তার পাওয়া যায়নি 😔</div>
+<!-- INTRO NOTE -->
+<div class="intro">
+  🌾 <strong>গ্রামীণ ব্যবসায়ীদের কথা মাথায় রেখে</strong> এই প্রাইসিং তৈরি করা হয়েছে। কম খরচে আপনার দোকান বা সার্ভিস হাজার মানুষের কাছে পৌঁছে দিন — শুধু Hello Kushmandi App-এর মাধ্যমে।
 </div>
+
+
+<!-- ===== SECTION 1: PAID LISTING ===== -->
+<div class="section-title">
+  <div class="icon">📋</div>
+  <div>
+    <h2>Paid Listing প্যাকেজ</h2>
+    <p>আপনার দোকান/সার্ভিস অ্যাপে লিস্ট করুন</p>
+  </div>
+</div>
+
+<div class="cards">
+
+  <!-- Free -->
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="plan-name">🆓 Basic Listing</div>
+        <div class="plan-sub">শুধু নাম ও নম্বর</div>
+        <span class="badge green">বর্তমানে FREE</span>
+      </div>
+      <div class="price-tag">
+        <div class="amount">₹০</div>
+        <div class="per">বিনামূল্যে</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="features">
+        <li>দোকানের নাম তালিকায় থাকবে</li>
+        <li>একটি ফোন নম্বর</li>
+        <li class="cross">ছবি বা লোগো নেই</li>
+        <li class="cross">Top Position নেই</li>
+        <li class="cross">WhatsApp বাটন নেই</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Silver -->
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="plan-name">🥈 Silver Listing</div>
+        <div class="plan-sub">ছোট দোকান / কারিগর</div>
+        <span class="badge green">সবচেয়ে সাশ্রয়ী</span>
+      </div>
+      <div class="price-tag">
+        <div class="amount">₹299</div>
+        <div class="per">/ বছর</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="features">
+        <li>দোকানের নাম ও ঠিকানা</li>
+        <li>২টি ফোন নম্বর</li>
+        <li>দোকানের ১টি ছবি</li>
+        <li>ক্যাটাগরিতে উপরের দিকে দেখাবে</li>
+        <li class="cross">WhatsApp বাটন নেই</li>
+        <li class="cross">Featured Badge নেই</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Gold -->
+  <div class="card">
+    <div class="card-header gold">
+      <div>
+        <div class="plan-name">🥇 Gold Listing</div>
+        <div class="plan-sub">দোকান / ক্লিনিক / সার্ভিস</div>
+        <span class="badge gold">⭐ সবচেয়ে জনপ্রিয়</span>
+      </div>
+      <div class="price-tag">
+        <div class="old-price">₹999</div>
+        <div class="amount gold">₹599</div>
+        <div class="per">/ বছর</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="features">
+        <li>দোকানের নাম, ঠিকানা, বিবরণ</li>
+        <li>৩টি ফোন নম্বর</li>
+        <li>৩টি ছবি / লোগো</li>
+        <li>🟡 Gold Badge সহ Top Position</li>
+        <li>WhatsApp Direct বাটন</li>
+        <li>সময়সূচি / কাজের ঘণ্টা</li>
+        <li class="cross">Splash Screen Ad নেই</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Platinum -->
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="plan-name">💎 Platinum Listing</div>
+        <div class="plan-sub">হাসপাতাল / বড় দোকান / স্কুল</div>
+        <span class="badge red">👑 সর্বোচ্চ সুবিধা</span>
+      </div>
+      <div class="price-tag">
+        <div class="old-price">₹1999</div>
+        <div class="amount">₹999</div>
+        <div class="per">/ বছর</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="features">
+        <li>সব Gold সুবিধা + বেশি</li>
+        <li>অসীমিত ছবি ও বিবরণ</li>
+        <li>💎 Diamond Badge — সর্বোচ্চ Position</li>
+        <li>WhatsApp + Google Maps লিংক</li>
+        <li>লোকাল নিউজ সেকশনে ১টি পোস্ট</li>
+        <li>বার্ষিক রিপোর্ট — কতজন দেখল</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /cards -->
+
+
+<!-- ===== SECTION 2: BANNER ADS ===== -->
+<div class="section-title">
+  <div class="icon">🖼️</div>
+  <div>
+    <h2>Banner Advertisement</h2>
+    <p>অ্যাপের বিভিন্ন পেজে ব্যানার দেখানো</p>
+  </div>
+</div>
+
+<div class="cards">
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="plan-name">📌 Static Banner</div>
+        <div class="plan-sub">হোমপেজ নিচে ব্যানার</div>
+        <span class="badge green">প্রতিদিন দেখা যায়</span>
+      </div>
+      <div class="price-tag">
+        <div class="amount">₹199</div>
+        <div class="per">/ মাস</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="banner-preview">
+        <span>🏪 আপনার দোকানের নাম এখানে</span>
+        <span style="background:#1a7c4f;color:#fff;padding:3px 8px;border-radius:6px;font-size:10px;">📞 Call</span>
+      </div>
+      <ul class="features" style="margin-top:10px">
+        <li>হোমপেজে নিচে সবসময় দেখাবে</li>
+        <li>Click করলে সরাসরি কল যাবে</li>
+        <li>সাইজ: ৩২০×৫০ পিক্সেল</li>
+        <li class="cross">ফুল স্ক্রিন নয়</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header gold">
+      <div>
+        <div class="plan-name">🎯 Featured Banner</div>
+        <div class="plan-sub">ক্যাটাগরি পেজের উপরে</div>
+        <span class="badge gold">বেশি দেখা যায়</span>
+      </div>
+      <div class="price-tag">
+        <div class="amount gold">₹399</div>
+        <div class="per">/ মাস</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="features">
+        <li>নির্দিষ্ট ক্যাটাগরির একদম উপরে</li>
+        <li>বড় ব্যানার — ৩২০×১০০ পিক্সেল</li>
+        <li>ছবি + লোগো + কল বাটন</li>
+        <li>মাসে যতজন দেখল রিপোর্ট পাবেন</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="plan-name">🏠 Splash Screen Banner</div>
+        <div class="plan-sub">অ্যাপ খুলতেই দেখায়</div>
+        <span class="badge red">সর্বোচ্চ ভিজিবিলিটি 🔥</span>
+      </div>
+      <div class="price-tag">
+        <div class="old-price">₹1500</div>
+        <div class="amount">₹799</div>
+        <div class="per">/ মাস</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="features">
+        <li>অ্যাপ open করলেই ৩ সেকেন্ড দেখায়</li>
+        <li>ফুল স্ক্রিন বিজ্ঞাপন</li>
+        <li>প্রতিটি ইউজার প্রতিদিন দেখবে</li>
+        <li>মাসে মাত্র ১টি স্লট — এক্সক্লুসিভ</li>
+        <li>ছবি / লোগো / ফোন নম্বর সব থাকবে</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /cards -->
+
+
+<!-- ===== SECTION 3: INTERSTITIAL ADS ===== -->
+<div class="section-title">
+  <div class="icon">📲</div>
+  <div>
+    <h2>Interstitial Ad</h2>
+    <p>পেজ স্ক্রল করার পরে ফুলস্ক্রিন বিজ্ঞাপন</p>
+  </div>
+</div>
+
+<div class="cards">
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="plan-name">⚡ Pop-up Full Screen Ad</div>
+        <div class="plan-sub">পেজ বদলানোর সময় দেখায়</div>
+        <span class="badge blue">গ্যারান্টিড ভিউ</span>
+      </div>
+      <div class="price-tag">
+        <div class="amount gold">₹599</div>
+        <div class="per">/ মাস</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="interstitial-preview">
+        <div class="int-close">✕ skip</div>
+        <div class="int-label">Advertisement</div>
+        <div class="int-ad-box">🏥 আপনার দোকান / ক্লিনিকের বিজ্ঞাপন<br><span style="font-size:11px;opacity:0.7">কল করুন: 98XXXXXXXX</span></div>
+      </div>
+      <ul class="features" style="margin-top:10px">
+        <li>প্রতি ৩য় পেজ ভিজিটে দেখায়</li>
+        <li>ফুল স্ক্রিন — বেশিক্ষণ নজরে পড়ে</li>
+        <li>ছবি + টেক্সট + কল বাটন</li>
+        <li>দিনে ৫০০+ ভিউ সম্ভব</li>
+        <li class="cross">এক্সক্লুসিভ নয় (২–৩টি রোটেশন)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header gold">
+      <div>
+        <div class="plan-name">👑 Exclusive Interstitial</div>
+        <div class="plan-sub">শুধু আপনার বিজ্ঞাপন দেখাবে</div>
+        <span class="badge gold">মাসে ১টি স্লট মাত্র</span>
+      </div>
+      <div class="price-tag">
+        <div class="old-price">₹1999</div>
+        <div class="amount gold">₹999</div>
+        <div class="per">/ মাস</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="features">
+        <li>সব Interstitial স্লটে শুধু আপনারটি</li>
+        <li>অন্য কারো বিজ্ঞাপন দেখাবে না</li>
+        <li>ভিডিও / GIF সাপোর্ট</li>
+        <li>প্রতিদিন ৮০০–১৫০০ গ্যারান্টিড ভিউ</li>
+        <li>মাসিক ভিউ রিপোর্ট দেওয়া হবে</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- COMBO OFFER -->
+<div style="padding: 20px 0 6px;">
+<div class="combo-card">
+  <div class="combo-tag">🎁 BEST VALUE COMBO</div>
+  <h3>সবমিলিয়ে প্যাকেজ</h3>
+  <p>Gold Listing + Featured Banner + Pop-up Ad — তিনটি একসাথে নিলে বড় ছাড় পাবেন।</p>
+  <div class="combo-prices">
+    <span class="combo-old">₹1597</span>
+    <span class="combo-new">₹999</span>
+    <span class="combo-save">₹598 বাঁচবে!</span>
+  </div>
+  <div style="margin-top:12px;font-family:'Tiro Bangla',serif;font-size:12px;color:rgba(255,255,255,0.6)">
+    ✅ ১ বছর Listing + ১ মাস Banner + ১ মাস Pop-up Ad
+  </div>
+</div>
+</div>
+
+
+<!-- QUICK PRICE TABLE -->
+<div class="section-title">
+  <div class="icon">📊</div>
+  <div>
+    <h2>দ্রুত প্রাইস তালিকা</h2>
+    <p>এক নজরে সব প্যাকেজ</p>
+  </div>
+</div>
+
+<div style="padding: 0 16px; max-width: 480px; margin: 0 auto;">
+<div style="background:#fff;border-radius:14px;border:1.5px solid var(--border);overflow:hidden;">
+  <table style="width:100%;border-collapse:collapse;font-size:13px;">
+    <thead>
+      <tr style="background:var(--green);color:#fff;">
+        <th style="padding:10px 12px;text-align:left;font-weight:700;">প্যাকেজ</th>
+        <th style="padding:10px 8px;text-align:center;font-weight:700;">মূল্য</th>
+        <th style="padding:10px 8px;text-align:center;font-weight:700;">মেয়াদ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid var(--green-light);">
+        <td style="padding:9px 12px;">🥈 Silver Listing</td>
+        <td style="padding:9px 8px;text-align:center;font-weight:700;color:var(--green);">₹299</td>
+        <td style="padding:9px 8px;text-align:center;color:var(--muted);">১ বছর</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--green-light);background:#fffdf5;">
+        <td style="padding:9px 12px;">🥇 Gold Listing</td>
+        <td style="padding:9px 8px;text-align:center;font-weight:700;color:var(--gold);">₹599</td>
+        <td style="padding:9px 8px;text-align:center;color:var(--muted);">১ বছর</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--green-light);">
+        <td style="padding:9px 12px;">💎 Platinum Listing</td>
+        <td style="padding:9px 8px;text-align:center;font-weight:700;color:var(--green);">₹999</td>
+        <td style="padding:9px 8px;text-align:center;color:var(--muted);">১ বছর</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--green-light);background:#fffdf5;">
+        <td style="padding:9px 12px;">📌 Static Banner</td>
+        <td style="padding:9px 8px;text-align:center;font-weight:700;color:var(--green);">₹199</td>
+        <td style="padding:9px 8px;text-align:center;color:var(--muted);">১ মাস</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--green-light);">
+        <td style="padding:9px 12px;">🎯 Featured Banner</td>
+        <td style="padding:9px 8px;text-align:center;font-weight:700;color:var(--gold);">₹399</td>
+        <td style="padding:9px 8px;text-align:center;color:var(--muted);">১ মাস</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--green-light);background:#fffdf5;">
+        <td style="padding:9px 12px;">🏠 Splash Screen</td>
+        <td style="padding:9px 8px;text-align:center;font-weight:700;color:var(--red);">₹799</td>
+        <td style="padding:9px 8px;text-align:center;color:var(--muted);">১ মাস</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--green-light);">
+        <td style="padding:9px 12px;">⚡ Pop-up Ad</td>
+        <td style="padding:9px 8px;text-align:center;font-weight:700;color:var(--gold);">₹599</td>
+        <td style="padding:9px 8px;text-align:center;color:var(--muted);">১ মাস</td>
+      </tr>
+      <tr style="background:#fffdf5;">
+        <td style="padding:9px 12px;">👑 Exclusive Pop-up</td>
+        <td style="padding:9px 8px;text-align:center;font-weight:700;color:var(--gold);">₹999</td>
+        <td style="padding:9px 8px;text-align:center;color:var(--muted);">১ মাস</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+
+<!-- PAYMENT INFO -->
+<div class="payment-note" style="margin-top:16px;">
+  <h4>💳 পেমেন্ট পদ্ধতি</h4>
+  <div class="pay-row">
+    <div class="pay-icon">📱</div>
+    <div class="pay-info">UPI / Google Pay / PhonePe<br><strong>যেকোনো UPI অ্যাপে পাঠানো যাবে</strong></div>
+  </div>
+  <div class="pay-row">
+    <div class="pay-icon">🏦</div>
+    <div class="pay-info">Bank Transfer (NEFT/IMPS)<br><strong>অ্যাকাউন্ট নম্বর যোগাযোগ করলে দেওয়া হবে</strong></div>
+  </div>
+  <div class="pay-row">
+    <div class="pay-icon">💵</div>
+    <div class="pay-info">সরাসরি নগদ<br><strong>কুশমন্ডিতে সরাসরি দেখা করে দেওয়া যাবে</strong></div>
+  </div>
+</div>
+
 
 <!-- FOOTER -->
-<footer class="footer">
-  <strong>চৌধুরী মেডিক্যাল স্টোর্স</strong><br>
-  কুশমণ্ডি (মহিপাল রোড), পশ্চিমবঙ্গ — গ্রামীণ বিকাশ ব্যাংকের নিচের তলায়<br>
-  📞 94757 58186 &nbsp;|&nbsp; 97334 12336
-  <div class="footer-services">
-    <span class="footer-tag">USG</span>
-    <span class="footer-tag">X-RAY Digital</span>
-    <span class="footer-tag">ECG</span>
-    <span class="footer-tag">Blood Test</span>
-    <span class="footer-tag">Stool • Urine • Sputum</span>
+<div class="footer">
+  <strong>Hello Kushmandi</strong> — কুশমন্ডির ডিজিটাল পরিচয়<br>
+  আপনার ব্যবসা এগিয়ে নিয়ে যান, আমরা আছি আপনার পাশে 🌿
+  <div class="contact">
+    📧 malinsarkar3@gmail.com &nbsp;|&nbsp; 🌐 sarkardev.in<br>
+    © 2026 Hello Kushmandi by Malin Sarkar
   </div>
-  <div style="margin-top:14px;font-size:11px;opacity:0.6;">বিঃ দ্রঃ — একই ছাদের নিচে সমস্ত রকমের পরীক্ষা করা হয়।</div>
-</footer>
+</div>
 
-<script>
-  function filterDoctors() {
-    const q = document.getElementById('searchInput').value.toLowerCase().trim();
-    const cards = document.querySelectorAll('.card[data-search]');
-    let visible = 0;
-    cards.forEach(card => {
-      const text = (card.dataset.search + ' ' + card.innerText).toLowerCase();
-      const show = !q || text.includes(q);
-      card.style.display = show ? '' : 'none';
-      if (show) visible++;
-    });
-    document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
-    document.getElementById('docCount').textContent = visible + ' জন';
-  }
-</script>
 </body>
 </html>
