@@ -811,10 +811,43 @@
   <strong>Hello Kushmandi</strong> — কুশমন্ডির ডিজিটাল পরিচয়<br>
   আপনার ব্যবসা এগিয়ে নিয়ে যান, আমরা আছি আপনার পাশে 🌿
   <div class="contact">
-    📧 malinsarkar3@gmail.com &nbsp;|&nbsp; 🌐 sarkardev.in<br>
+    📧 malinsarkar@yahoo.in &nbsp;|&nbsp; 🌐 sarkardev.in<br>
     © 2026 Hello Kushmandi by Malin Sarkar
   </div>
 </div>
+
+<!-- SHARE BAR -->
+<div style="position: sticky; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1.5px solid var(--border); box-shadow: 0 -4px 16px rgba(26,124,79,0.1); padding: 10px 14px; display: flex; gap: 10px; z-index: 50; max-width: 480px; margin: 0 auto;">
+  <a href="https://wa.me/919933989736" target="_blank" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 7px; background: #25D366; color: #fff; padding: 11px 10px; border-radius: 12px; font-weight: 700; font-size: 13px; text-decoration: none; box-shadow: 0 2px 8px rgba(37,211,102,0.3);">
+    💬 WhatsApp
+  </a>
+  <a href="mailto:malinsarkar@yahoo.in?subject=Hello Kushmandi - বিজ্ঞাপন সম্পর্কে জানতে চাই" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 7px; background: var(--green); color: #fff; padding: 11px 10px; border-radius: 12px; font-weight: 700; font-size: 13px; text-decoration: none; box-shadow: 0 2px 8px rgba(26,124,79,0.3);">
+    📧 Email
+  </a>
+  <button onclick="sharePricing()" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 7px; background: var(--gold); color: #fff; padding: 11px 10px; border-radius: 12px; font-weight: 700; font-size: 13px; border: none; cursor: pointer; box-shadow: 0 2px 8px rgba(232,160,32,0.3); font-family: 'Baloo Da 2', sans-serif;">
+    🔗 Share
+  </button>
+</div>
+
+<script>
+function sharePricing() {
+  const shareData = {
+    title: 'Hello Kushmandi — বিজ্ঞাপন প্রাইসিং ২০২৬',
+    text: 'কুশমন্ডির ব্যবসায়ীদের জন্য Hello Kushmandi App-এ বিজ্ঞাপনের সম্পূর্ণ প্রাইস লিস্ট দেখুন।',
+    url: window.location.href
+  };
+  if (navigator.share) {
+    navigator.share(shareData).catch(() => {});
+  } else {
+    const text = shareData.title + ' - ' + shareData.text + ' ' + shareData.url;
+    navigator.clipboard.writeText(text).then(() => {
+      alert('লিংক কপি হয়েছে! এখন শেয়ার করতে পারেন।');
+    }).catch(() => {
+      alert('যোগাযোগ: WhatsApp - 9933989736');
+    });
+  }
+}
+</script>
 
 </body>
 </html>
